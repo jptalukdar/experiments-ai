@@ -1,0 +1,25 @@
+[project]
+name = "neomcp"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "Jyotiplaban Talukdar",email = "36496193+jptalukdar@users.noreply.github.com"}
+]
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "python-dotenv (>=1.2.1,<2.0.0)",
+    "google-api-python-client (>=2.185.0,<3.0.0)",
+    "google-auth-httplib2 (>=0.2.0,<0.3.0)",
+    "google-auth-oauthlib (>=1.2.2,<2.0.0)",
+    "pytz (>=2025.2,<2026.0)",
+    "fastapi (>=0.120.0,<0.121.0)",
+    "uvicorn (>=0.38.0,<0.39.0)",
+    "pydantic (>=2.12.3,<3.0.0)",
+    "google-genai (>=1.46.0,<2.0.0)",
+]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
