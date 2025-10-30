@@ -198,3 +198,4 @@ venv/
 */.env
 mcp/token.json
 mcp/credentials.json
+/mcp/.data

@@ -233,3 +233,43 @@ def add_calendar_event(summary: str, date: str, start_time: str, end_time: str) 
         print(f'  [REAL GCal] A general error occurred: {e}')
         return {'error': str(e)}
 
+google_calendar_tool_definitions = [{
+        "name": "fetch_calendar_events",
+        "description": "Get a list of Google Calendar events for a specific date.",
+        "parameters": {
+            "type": "OBJECT",
+            "properties": {
+                "date": {
+                    "type": "STRING",
+                    "description": "The date to fetch events for, in YYYY-MM-DD format."
+                }
+            },
+            "required": ["date"]
+        }
+    },
+    {
+        "name": "add_calendar_event",
+        "description": "Add a new event to the Google Calendar.",
+        "parameters": {
+            "type": "OBJECT",
+            "properties": {
+                "summary": {
+                    "type": "STRING",
+                    "description": "The title or summary of the event (e.g., 'Dentist Appointment')."
+                },
+                "date": {
+                    "type": "STRING",
+                    "description": "The date of the event, in YYYY-MM-DD format."
+                },
+                "start_time": {
+                    "type": "STRING",
+                    "description": "The event start time in 24-hour HH:MM format (e.g., '14:30')."
+                },
+                "end_time": {
+                    "type": "STRING",
+                    "description": "The event end time in 24-hour HH:MM format (e.g., '15:30')."
+                }
+            },
+            "required": ["summary", "date", "start_time", "end_time"]
+        }
+    }]
