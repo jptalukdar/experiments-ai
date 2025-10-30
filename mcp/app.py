@@ -56,9 +56,11 @@ async def chat_endpoint(request: schemas.ChatRequest):
         # Extract the first part of the response from the (mock) API
         response_part = response_step1["candidates"][0]["content"]["parts"][0]
 
-        if "function_call" in response_part:
+        if "function_call" in response_part and response_part["function_call"] is not None:
             # 2. Gemini wants to call a tool
             print("[Step 2] Gemini requested a tool call.")
+            print("Function Call Details:")
+            print(response_part)
             fc = response_part["function_call"]
             tool_name = fc["name"]
             tool_args = fc.get("args", {})
